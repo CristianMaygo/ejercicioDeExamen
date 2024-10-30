@@ -19,4 +19,13 @@ function iniciarSesion() {
     console.log("Se ha alcanzado el número máximo de intentos. El sistema se cerrará.");
 }   
 
+function calcularCosto(consumo) {
+    if (consumo <= 15) {
+        return consumo * 500;
+    } else if (consumo <= 30) {
+        return consumo * 700;
+    } else {
+        return consumo * 1000;
+    }
+}
 
