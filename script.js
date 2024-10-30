@@ -52,3 +52,19 @@ function calcularConsumo() {
     mostrarTotal(totalConsumo, totalCosto);
 }
 
+function mostrarTotal(totalConsumo, totalCosto) {
+    console.log("Cálculo finalizado:");
+    console.log(`Consumo total del edificio: ${totalConsumo}m³`);
+    console.log(`Costo total mensual: $${totalCosto}`);
+}
+
+iniciarSesion();function calcularCosto(consumo) {
+    if (consumo <= 15) {
+        return consumo * 500;
+    } else if (consumo <= 30) {
+        return consumo * 700;
+    } else {
+        return consumo * 1000;
+    }
+}
+
