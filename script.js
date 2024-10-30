@@ -68,3 +68,24 @@ iniciarSesion();function calcularCosto(consumo) {
     }
 }
 
+function calcularConsumo() {
+    let totalConsumo = 0;
+    let totalCosto = 0;
+
+    while (true) {
+        let consumo = prompt("Ingrese el consumo de agua del apartamento (o escriba 'fin' para terminar):");
+        if (consumo.toLowerCase() === "fin") break;
+        
+        consumo = parseFloat(consumo);
+        if (!isNaN(consumo) && consumo >= 0) {
+            let costo = calcularCosto(consumo);
+            totalConsumo += consumo;
+            totalCosto += costo;
+            console.log(`Consumo: ${consumo}m³, Costo: $${costo}`);
+        } else {
+            console.log("Por favor, ingrese un valor válido.");
+        }
+    }
+    mostrarTotal(totalConsumo, totalCosto);
+}
+
